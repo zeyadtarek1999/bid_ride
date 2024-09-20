@@ -1,4 +1,4 @@
-# flutter_init_project
+# BidRide
 
 A new Flutter project to start new projects with some code initialization
 
