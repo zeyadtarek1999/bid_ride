@@ -1,4 +1,4 @@
-package com.example.flutter_helper
+package com.example.bid_ride
 
 import io.flutter.embedding.android.FlutterActivity
 

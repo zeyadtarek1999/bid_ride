@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_helper/core/usecases/usecase.dart';
-import 'package:flutter_helper/features/first_feature/domain/entities/cat_fact_entity.dart';
+import 'package:bid_ride/core/usecases/usecase.dart';
+import 'package:bid_ride/features/first_feature/domain/entities/cat_fact_entity.dart';
 import 'package:meta/meta.dart';
 
 import '../../domain/use_cases/first_feature_uc.dart';

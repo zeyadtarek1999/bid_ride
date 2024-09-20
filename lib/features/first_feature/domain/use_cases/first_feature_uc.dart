@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter_helper/core/error/failures.dart';
-import 'package:flutter_helper/core/usecases/usecase.dart';
-import 'package:flutter_helper/features/first_feature/domain/entities/cat_fact_entity.dart';
-import 'package:flutter_helper/features/first_feature/domain/repositories/first_feature_repo.dart';
+import 'package:bid_ride/core/error/failures.dart';
+import 'package:bid_ride/core/usecases/usecase.dart';
+import 'package:bid_ride/features/first_feature/domain/entities/cat_fact_entity.dart';
+import 'package:bid_ride/features/first_feature/domain/repositories/first_feature_repo.dart';
 
 class FirstFeatureUc implements UseCase<CatFactEntity, NoParams> {
   final FirstFeatureRepository firstFeatureRepository;
