@@ -1,7 +1,9 @@
+import 'package:bid_ride/shared_widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:bid_ride/features/first_feature/presentation/manager/cat_fact_cubit.dart';
 import '../../../../injection_container.dart';
+import '../../../../shared_widgets/buttons/custom_material_btn.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -19,23 +21,11 @@ class HomeScreen extends StatelessWidget {
             ),
             body: Center(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  if (state is CatFactErrorState) ...[
-                    Text(
-                      state.errMsg,
-                    ),
-                  ] else if (state is CatFactSuccessState) ...[
-                    Text(
-                      state.catFactEntity.fact,
-                    ),
-                    Text(
-                      state.catFactEntity.length.toString(),
-                      style: Theme.of(context).textTheme.headlineMedium,
-                    ),
-                  ] else
-                    ...[]
-                ],
+               children: [
+                 CustomMaterialButton(text: 'Hello', onPressed: () {  },),
+                 CustomTextFormFieldWidget(hint: 'asd', isPassword: true,suffix: Icons.favorite_outline,)
+               ],
+
               ),
             ),
             floatingActionButton: FloatingActionButton(

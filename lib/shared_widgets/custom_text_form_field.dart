@@ -1,116 +1,153 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../core/utils/app_colors.dart';
 
-class CustomTextFormFieldWidget extends StatelessWidget {
-  const CustomTextFormFieldWidget(
-      {super.key,
-      required this.hint,
-      this.suffixIcon,
-      this.obscureText = false,
-      this.withBorders = false,
-      this.readOnly = false,
-      this.textInputType,
-      this.textInputAction,
-      this.textAlign = TextAlign.start,
-      this.fillColor,
-      this.labelColor,
-      this.hintColor,
-      this.textColor,
-      this.controller,
-      this.onChange,
-      required this.validator,
-      this.prefixIcon,
-      this.onEditingComplete});
+class CustomTextFormFieldWidget extends StatefulWidget {
+  const CustomTextFormFieldWidget({
+    super.key,
+    this.controller,
+    this.keyboardType,
+    this.onChanged,
+    this.onSubmit,
+    this.onTap,
+    this.label,
+    this.prefix,
+    this.isPassword = false,
+    this.suffix,
+    this.suffixPressed,
+    this.borderColor,
+    this.hint,
+    this.fillColor,
+    this.textAlign = TextAlign.start,
+    this.validator,
+    this.readOnly = false,
+    this.textInputAction,
+    this.textColor,
+    this.hintColor,
+    this.withBorders = true,
+  });
 
+  // Variables from defaultTextFormField
   final TextEditingController? controller;
-  final String hint;
-  final Widget? suffixIcon;
-  final Widget? prefixIcon;
-  final bool obscureText;
-  final bool withBorders;
-  final TextAlign textAlign;
-  final FormFieldValidator<String> validator;
-  final bool readOnly;
-  final TextInputType? textInputType;
-  final TextInputAction? textInputAction;
+  final TextInputType? keyboardType;
+  final Function(String)? onChanged;
+  final Function(String)? onSubmit;
+  final VoidCallback? onTap;
+  final String? label;
+  final IconData? prefix;
+  final bool isPassword;
+  final IconData? suffix;
+  final VoidCallback? suffixPressed;
+  final Color? borderColor;
+
+  // Additional customization
+  final String? hint;
   final Color? fillColor;
-  final Color? hintColor;
-  final Color? labelColor;
+  final TextAlign textAlign;
+  final String? Function(String?)? validator;
+  final bool readOnly;
+  final TextInputAction? textInputAction;
   final Color? textColor;
-  final void Function(String)? onChange;
-  final void Function()? onEditingComplete;
+  final Color? hintColor;
+  final bool withBorders;
+
+  @override
+  _CustomTextFormFieldWidgetState createState() => _CustomTextFormFieldWidgetState();
+}
+
+class _CustomTextFormFieldWidgetState extends State<CustomTextFormFieldWidget> {
+  bool isObscured = false;
+
+  @override
+  void initState() {
+    super.initState();
+    isObscured = widget.isPassword;
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        TextFormField(
-          readOnly: readOnly,
-          obscureText: obscureText,
-          controller: controller,
-          keyboardType: textInputType,
-          textInputAction: textInputAction,
-          onChanged: onChange,
-          textAlign: textAlign,
-          textAlignVertical: TextAlignVertical.center,
-          validator: validator,
-          cursorColor: AppColors.mainColor,
-          onEditingComplete: onEditingComplete,
-          style: TextStyle(
-            color: textColor ?? AppColors.mainColor,
-            fontSize: 16.sp,
-            fontWeight: FontWeight.w500,
+    return TextFormField(
+      controller: widget.controller,
+      keyboardType: widget.keyboardType,
+      obscureText: isObscured,
+      onChanged: widget.onChanged,
+      onFieldSubmitted: widget.onSubmit,
+      onTap: widget.onTap,
+      readOnly: widget.readOnly,
+      validator: widget.validator,
+      textAlign: widget.textAlign,
+      textInputAction: widget.textInputAction,
+      style: TextStyle(
+        color: widget.textColor ?? AppColors.mainColor,
+        fontSize: 16.sp,
+        fontWeight: FontWeight.w500,
+      ),
+      decoration: InputDecoration(
+        hintText: widget.hint ?? widget.label,
+        hintStyle: TextStyle(color: widget.hintColor ?? AppColors.hintColor),
+        filled: widget.fillColor != null,
+        fillColor: widget.fillColor,
+        prefixIcon: widget.prefix != null ? Icon(widget.prefix) : null,
+        suffixIcon: widget.isPassword
+            ? IconButton(
+          icon: Icon(
+            isObscured ? Icons.visibility_off : Icons.visibility,
+            color: AppColors.hintColor,
           ),
-          decoration: InputDecoration(
-            suffixIcon: suffixIcon,
-            prefixIcon: prefixIcon,
-            hintText: hint,
-            hintStyle: TextStyle(
-              color: hintColor ?? AppColors.mainTextColor,
-            ),
-            filled: fillColor != null,
-            fillColor: fillColor,
-            contentPadding: EdgeInsets.symmetric(horizontal: 16.w),
-            border: withBorders
-                ? OutlineInputBorder(
-                    borderSide:
-                        BorderSide(color: AppColors.mainColor, width: 0.5.w),
-                    borderRadius: BorderRadius.circular(22.r),
-                  )
-                : OutlineInputBorder(
-                    borderSide: BorderSide.none,
-                    borderRadius: BorderRadius.circular(22.r),
-                  ),
-            focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: AppColors.mainColor, width: 0.5.w),
-              borderRadius: BorderRadius.circular(22.r),
-            ),
-            errorBorder: withBorders
-                ? OutlineInputBorder(
-                    borderSide:
-                        BorderSide(color: AppColors.error, width: 0.5.w),
-                    borderRadius: BorderRadius.circular(22.r),
-                  )
-                : OutlineInputBorder(
-                    borderSide: BorderSide.none,
-                    borderRadius: BorderRadius.circular(22.r),
-                  ),
-            focusedErrorBorder: withBorders
-                ? OutlineInputBorder(
-                    borderSide:
-                        BorderSide(color: AppColors.error, width: 0.5.w),
-                    borderRadius: BorderRadius.circular(22.r),
-                  )
-                : OutlineInputBorder(
-                    borderSide: BorderSide.none,
-                    borderRadius: BorderRadius.circular(22.r),
-                  ),
-          ),
+          onPressed: () {
+            setState(() {
+              isObscured = !isObscured;
+            });
+            if (widget.suffixPressed != null) {
+              widget.suffixPressed!();
+            }
+          },
         )
-      ],
+            : (widget.suffix != null
+            ? IconButton(
+          icon: Icon(widget.suffix),
+          onPressed: widget.suffixPressed,
+        )
+            : null),
+        contentPadding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
+        border: widget.withBorders
+            ? OutlineInputBorder(
+          borderSide: BorderSide(
+            color: widget.borderColor ?? AppColors.hintColor,
+            width: 0.5.w,
+          ),
+          borderRadius: BorderRadius.circular(8.0),
+        )
+            : InputBorder.none,
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+            color: widget.borderColor ?? AppColors.hintColor,
+            width: 0.5.w,
+          ),
+          borderRadius: BorderRadius.circular(8.0),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+            color: AppColors.secondColor,
+            width: 0.5.w,
+          ),
+          borderRadius: BorderRadius.circular(8.0),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+            color: Colors.red,
+            width: 0.5.w,
+          ),
+          borderRadius: BorderRadius.circular(8.0),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+            color: Colors.red,
+            width: 0.5.w,
+          ),
+          borderRadius: BorderRadius.circular(8.0),
+        ),
+      ),
     );
   }
 }
