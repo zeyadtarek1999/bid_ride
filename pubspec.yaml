@@ -24,6 +24,8 @@ dependencies:
   permission_handler: ^11.3.1
   url_launcher: ^6.3.0
   pretty_dio_logger: ^1.4.0
+  local_auth: ^2.3.0
+  flutter_secure_storage: ^9.2.2
 
 dev_dependencies:
   flutter_test:
@@ -49,3 +51,7 @@ flutter:
     - assets/icons/
     - assets/languages/
     - assets/fonts/
+  fonts:
+    - family: Almarai
+      fonts:
+        - asset: assets/fonts/Almarai-Regular.ttf

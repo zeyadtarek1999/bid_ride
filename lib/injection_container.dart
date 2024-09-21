@@ -1,3 +1,4 @@
+import 'package:bid_ride/features/splash/presentation/manager/splash_cubit.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:bid_ride/core/services/permission_service.dart';
@@ -25,6 +26,7 @@ Future<void> getItInit() async {
 
   /// Blocs
   getIt.registerFactory<CatFactCubit>(() => CatFactCubit(featureUc: getIt()));
+  getIt.registerFactory(() => SplashCubit( ));
 
   /// Use cases
   getIt

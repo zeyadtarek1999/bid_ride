@@ -1,121 +1,142 @@
+import 'package:bid_ride/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../core/utils/app_colors.dart';
-import '../../core/utils/font_details.dart';
 
 ThemeData appTheme() {
   return ThemeData(
-      primaryColor: AppColors.mainColor,
-      hintColor: AppColors.hintColor,
-      brightness: Brightness.light,
-      scaffoldBackgroundColor: Colors.white,
-      fontFamily: FontDetails.fontFamilyName,
-      textTheme: TextTheme(
-        displayLarge: TextStyle(
-            fontWeight: FontDetails.boldFontWeight,
-            color: AppColors.mainColor,
-            fontSize: FontDetails.fontSizeXL),
-        displayMedium: TextStyle(
-            fontWeight: FontDetails.mediumFontWeight,
-            color: AppColors.mainColor,
-            fontSize: FontDetails.fontSizeM),
-        displaySmall: TextStyle(
-            fontWeight: FontDetails.mediumFontWeight,
-            color: AppColors.mainColor,
-            fontSize: FontDetails.fontSizeS),
-
-        ///-----------------
-        headlineLarge: TextStyle(
-            fontWeight: FontDetails.boldFontWeight,
-            color: AppColors.white,
-            fontSize: FontDetails.fontSizeL),
-        headlineMedium: TextStyle(
-            fontWeight: FontDetails.mediumFontWeight,
-            color: AppColors.white,
-            fontSize: FontDetails.fontSizeM),
-        headlineSmall: TextStyle(
-            fontWeight: FontDetails.regularFontWeight,
-            color: AppColors.white,
-            fontSize: FontDetails.fontSizeXS),
-
-        ///-----------------
-        titleSmall: TextStyle(
-            fontWeight: FontDetails.mediumFontWeight,
-            color: AppColors.black,
-            fontSize: FontDetails.fontSizeXS),
-        titleMedium: TextStyle(
-            fontWeight: FontDetails.semiBoldFontWeight,
-            color: AppColors.black,
-            fontSize: FontDetails.fontSizeM),
-        titleLarge: TextStyle(
-            fontWeight: FontDetails.semiBoldFontWeight,
-            color: AppColors.black,
-            fontSize: FontDetails.fontSizeL),
-
-        ///-----------------
-        // labelSmall: ,
-        // labelMedium: ,
-        // labelLarge: ,
-
-        ///-----------------
-        bodySmall: TextStyle(
-            fontWeight: FontDetails.mediumFontWeight,
-            color: AppColors.mainTextColor,
-            fontSize: FontDetails.fontSizeXS),
-        bodyMedium: TextStyle(
-            fontWeight: FontDetails.mediumFontWeight,
-            color: AppColors.mainTextColor,
-            fontSize: FontDetails.fontSizeM),
-        bodyLarge: TextStyle(
-            fontWeight: FontDetails.mediumFontWeight,
-            color: AppColors.mainTextColor,
-            fontSize: FontDetails.fontSizeL),
+    primaryColor: AppColors.mainColor,
+    hintColor: AppColors.hintColor,
+    brightness: Brightness.light,
+    scaffoldBackgroundColor: AppColors.white,
+    fontFamily:  Assets.fonts.almaraiRegular,
+    textTheme: TextTheme(
+      displayLarge: TextStyle(
+        fontWeight: FontWeight.bold,
+        color: AppColors.mainColor,
+        fontSize: 32.sp,
+        fontFamily: Assets.fonts.almaraiRegular,
       ),
-      outlinedButtonTheme: OutlinedButtonThemeData(
-        style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(AppColors.mainColor),
-          shape: MaterialStateProperty.all(RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12.r))),
-          textStyle: MaterialStateProperty.resolveWith(
-            (states) => TextStyle(
-              fontWeight: FontDetails.mediumFontWeight,
-              fontSize: FontDetails.fontSizeM,
-              color: AppColors.white,
-            ),
+      displayMedium: TextStyle(
+        fontWeight: FontWeight.w600,
+        color: AppColors.mainColor,
+        fontSize: 28.sp,
+        fontFamily: Assets.fonts.almaraiRegular,
+      ),
+      displaySmall: TextStyle(
+        fontWeight: FontWeight.w500,
+        color: AppColors.mainColor,
+        fontSize: 24.sp,
+        fontFamily: Assets.fonts.almaraiRegular,
+      ),
+      headlineLarge: TextStyle(
+        fontWeight: FontWeight.bold,
+        color: AppColors.white,
+        fontSize: 22.sp,
+        fontFamily: Assets.fonts.almaraiRegular,
+      ),
+      headlineMedium: TextStyle(
+        fontWeight: FontWeight.w500,
+        color: AppColors.white,
+        fontSize: 18.sp,
+        fontFamily: Assets.fonts.almaraiRegular,
+      ),
+      headlineSmall: TextStyle(
+        fontWeight: FontWeight.bold,
+        color: AppColors.white,
+        fontSize: 16.sp,
+        fontFamily: Assets.fonts.almaraiRegular,
+      ),
+      titleLarge: TextStyle(
+        fontWeight: FontWeight.w600,
+        color: AppColors.black,
+        fontSize: 20.sp,
+        fontFamily: Assets.fonts.almaraiRegular,
+      ),
+      titleMedium: TextStyle(
+        fontWeight: FontWeight.w500,
+        color: AppColors.black,
+        fontSize: 18.sp,
+        fontFamily: Assets.fonts.almaraiRegular,
+      ),
+      titleSmall: TextStyle(
+        fontWeight: FontWeight.w400,
+        color: AppColors.black,
+        fontSize: 16.sp,
+        fontFamily: Assets.fonts.almaraiRegular,
+      ),
+      bodyLarge: TextStyle(
+        fontWeight: FontWeight.w500,
+        color: AppColors.mainTextColor,
+        fontSize: 18.sp,
+        fontFamily: Assets.fonts.almaraiRegular,
+      ),
+      bodyMedium: TextStyle(
+        fontWeight: FontWeight.w400,
+        color: AppColors.mainTextColor,
+        fontSize: 16.sp,
+        fontFamily: Assets.fonts.almaraiRegular,
+      ),
+      bodySmall: TextStyle(
+        fontWeight: FontWeight.w400,
+        color: AppColors.mainTextColor,
+        fontSize: 14.sp,
+        fontFamily: Assets.fonts.almaraiRegular,
+      ),
+    ),
+    outlinedButtonTheme: OutlinedButtonThemeData(
+      style: ButtonStyle(
+        backgroundColor: WidgetStateProperty.all(AppColors.mainColor),
+        shape: WidgetStateProperty.all(
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.r)),
+        ),
+        textStyle: WidgetStateProperty.resolveWith(
+              (states) => TextStyle(
+            fontWeight: FontWeight.w500,
+            fontSize: 16.sp,
+            fontFamily: Assets.fonts.almaraiRegular,
+            color: AppColors.white,
           ),
         ),
       ),
-      elevatedButtonTheme: ElevatedButtonThemeData(
-        style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(AppColors.mainColor),
-          shape: MaterialStateProperty.all(RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(22.r))),
-          textStyle: MaterialStateProperty.resolveWith(
-            (states) => TextStyle(
-              fontWeight: FontDetails.mediumFontWeight,
-              fontSize: FontDetails.fontSizeM,
-              color: AppColors.white,
-            ),
+    ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ButtonStyle(
+        backgroundColor: WidgetStateProperty.all(AppColors.mainColor),
+        shape: WidgetStateProperty.all(
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(22.r)),
+        ),
+        textStyle: WidgetStateProperty.resolveWith(
+              (states) => TextStyle(
+            fontWeight: FontWeight.w500,
+            fontSize: 16.sp,
+            fontFamily: Assets.fonts.almaraiRegular,
+            color: AppColors.white,
           ),
         ),
       ),
-      textButtonTheme: TextButtonThemeData(
-        style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(Colors.transparent),
-          shape: MaterialStateProperty.all(RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(22.r))),
-          textStyle: MaterialStateProperty.resolveWith(
-            (states) => TextStyle(
-              fontWeight: FontDetails.mediumFontWeight,
-              fontSize: FontDetails.fontSizeM,
-              color: AppColors.mainColor,
-            ),
+    ),
+    textButtonTheme: TextButtonThemeData(
+      style: ButtonStyle(
+        backgroundColor: WidgetStateProperty.all(Colors.transparent),
+        shape: WidgetStateProperty.all(
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(22.r)),
+        ),
+        textStyle: WidgetStateProperty.resolveWith(
+              (states) => TextStyle(
+            fontWeight: FontWeight.w500,
+            fontSize: 16.sp,
+            fontFamily: Assets.fonts.almaraiRegular,
+            color: AppColors.mainColor,
           ),
         ),
       ),
-      dialogTheme: DialogTheme(
-        backgroundColor: AppColors.white,
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(20.r))),
-      ));
+    ),
+    dialogTheme: DialogTheme(
+      backgroundColor: AppColors.white,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(20.r)),
+      ),
+    ),
+  );
 }
