@@ -8,8 +8,12 @@ ThemeData appTheme() {
     primaryColor: AppColors.mainColor,
     hintColor: AppColors.hintColor,
     brightness: Brightness.light,
-    scaffoldBackgroundColor: AppColors.white,
+    scaffoldBackgroundColor: AppColors.scaffoldColor,
     fontFamily:  Assets.fonts.almaraiRegular,
+    appBarTheme: AppBarTheme(
+      color: AppColors.appBarColor
+    ),
+
     textTheme: TextTheme(
       displayLarge: TextStyle(
         fontWeight: FontWeight.bold,
