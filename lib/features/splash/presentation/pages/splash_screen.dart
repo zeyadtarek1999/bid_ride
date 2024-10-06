@@ -13,7 +13,7 @@ class SplashScreen extends StatelessWidget {
     return BlocConsumer<SplashCubit, SplashState>(
       listener: (context, state) {
         if (state is SplashFinished) {
-          Navigator.pushReplacementNamed(context, AppRoutes.homeScreenRoute);
+          Navigator.pushReplacementNamed(context, AppRoutes.registerScreenRoute);
         }
       },
       builder: (context, state) {

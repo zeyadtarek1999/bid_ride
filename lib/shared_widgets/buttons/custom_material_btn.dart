@@ -34,7 +34,7 @@ class CustomMaterialButton extends StatelessWidget {
           ),
         child: CustomTextWidget(
           text: text,
-          textStyle: textStyle ?? Theme.of(context).textTheme.bodyMedium!.copyWith(color: AppColors.bgColor),
+          textStyle: textStyle ?? Theme.of(context).textTheme.bodyMedium!.copyWith(color: AppColors.buttonTextColor),
         ),
       ),
     );
