@@ -26,8 +26,12 @@ class $AssetsImagesGen {
   AssetGenImage get splashImage =>
       const AssetGenImage('assets/images/splash_image.png');
 
+  /// File path: assets/images/welcome_screen.png
+  AssetGenImage get welcomeScreen =>
+      const AssetGenImage('assets/images/welcome_screen.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [splashImage];
+  List<AssetGenImage> get values => [splashImage, welcomeScreen];
 }
 
 class $AssetsLanguagesGen {
