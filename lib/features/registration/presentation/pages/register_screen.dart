@@ -21,7 +21,7 @@ class RegisterScreen extends StatelessWidget{
         child: Padding(
           padding:  EdgeInsets.symmetric(horizontal: 8.0.w),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
                  Center(
