@@ -32,7 +32,10 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                   const SizedBox(width: 10), // Space between buttons
                   Expanded(
-                    child: CustomMaterialButton(text: 'Login', onPressed: () {}),
+                    child: CustomMaterialButton(text: 'Login', onPressed: () {
+                      Navigator.pushReplacementNamed(context, AppRoutes.loginScreenRoute);
+
+                    }),
                   ),
                 ],
               ),
