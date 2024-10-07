@@ -6,15 +6,19 @@ import '../custom_text.dart';
 class CustomMaterialButton extends StatelessWidget {
   final String text;
   final VoidCallback? onPressed;
-  final ButtonStyle? style;
   final TextStyle? textStyle;
+  final Color? borderColor;
+  final Color? color;
+  final double? borderWidth; // Added borderWidth parameter
 
   const CustomMaterialButton({
     super.key,
     required this.text,
-    this.style,
     this.textStyle,
     required this.onPressed,
+    this.color,
+    this.borderColor,
+    this.borderWidth, // Initialize borderWidth parameter
   });
 
   @override
@@ -24,14 +28,18 @@ class CustomMaterialButton extends StatelessWidget {
       width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30.0.r),
-        color:  AppColors.secondColor,
+        color: borderColor ?? AppColors.secondColor,
+        border: Border.all(
+          color: borderColor ?? AppColors.secondColor, // Border color
+          width: borderWidth ?? 0.0, // Border width (default is 2.0 if null)
+        ),
       ),
       child: MaterialButton(
-        color: AppColors.secondColor,
+        color: color ?? AppColors.secondColor,
         onPressed: onPressed,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30.0.r),
-          ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30.0.r),
+        ),
         child: CustomTextWidget(
           text: text,
           textStyle: textStyle ?? Theme.of(context).textTheme.bodyMedium!.copyWith(color: AppColors.buttonTextColor),

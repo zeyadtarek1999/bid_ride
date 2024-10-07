@@ -1,3 +1,4 @@
+import 'package:bid_ride/config/routes/app_routes.dart';
 import 'package:bid_ride/shared_widgets/buttons/custom_material_btn.dart';
 import 'package:bid_ride/shared_widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +12,10 @@ class RegisterScreen extends StatelessWidget{
 
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(onPressed: (){},icon: const Icon(Icons.arrow_back,)),
+        leading: IconButton(onPressed: (){
+          Navigator.pushReplacementNamed(context, AppRoutes.welcomeScreenRoute);
+
+        },icon: const Icon(Icons.arrow_back,)),
       ),
       body:SingleChildScrollView(
         child: Padding(
