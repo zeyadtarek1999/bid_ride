@@ -1,4 +1,5 @@
 import 'package:bid_ride/core/utils/app_colors.dart';
+import 'package:bid_ride/features/home/presentation/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 class Layout extends StatefulWidget {
@@ -12,7 +13,7 @@ class _LayoutState extends State<Layout> {
   int _currentIndex = 0;
 
   final List<Widget> _pages = [
-    HomePage(),
+    const HomePage(),
     FavoritesPage(),
     OrdersPage(),
     CartPage(),
@@ -83,37 +84,31 @@ class _LayoutState extends State<Layout> {
 }
 
 // Dummy pages for each tab
-class HomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(child: Text('Home Page'));
-  }
-}
 
 class FavoritesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('Favorites Page'));
+    return const Center(child: Text('Favorites Page'));
   }
 }
 
 class OrdersPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('Orders Page'));
+    return const Center(child: Text('Orders Page'));
   }
 }
 
 class CartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('Cart Page'));
+    return const Center(child: Text('Cart Page'));
   }
 }
 
 class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('Profile Page'));
+    return const Center(child: Text('Profile Page'));
   }
 }

@@ -27,6 +27,7 @@ dependencies:
   local_auth: ^2.3.0
   flutter_secure_storage: ^9.2.2
   font_awesome_flutter: ^10.4.0
+  custom_radio_grouped_button: ^2.2.1
 
 
 dev_dependencies:
