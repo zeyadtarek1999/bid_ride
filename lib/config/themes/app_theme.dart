@@ -11,6 +11,8 @@ ThemeData appTheme() {
     scaffoldBackgroundColor: AppColors.scaffoldColor,
     fontFamily:  Assets.fonts.almaraiRegular,
     appBarTheme: AppBarTheme(
+      elevation: 0,
+      centerTitle:true,
       color: AppColors.appBarColor
     ),
 
