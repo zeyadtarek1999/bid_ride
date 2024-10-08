@@ -44,7 +44,10 @@ class LoginScreen extends StatelessWidget {
               isPassword: true,
             ),
             SizedBox(height: 60.h,),
-            CustomMaterialButton(text: 'Login', onPressed: (){})
+            CustomMaterialButton(text: 'Login', onPressed: (){
+              Navigator.pushReplacementNamed(context, AppRoutes.homeScreenRoute);
+
+            })
 
           ],
         ),
