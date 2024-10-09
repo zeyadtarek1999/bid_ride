@@ -54,14 +54,22 @@ class Posts extends StatelessWidget {
             ],
           ),
            SizedBox(height: 12.h),
-          const Text(
-            "FILA Men's shorts",
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-          ),
-           SizedBox(height: 4.h),
-          const Text(
-            'Aug 11, 10:40Am - Aug 20, 06:00Pm',overflow: TextOverflow.ellipsis,
-            style: TextStyle(fontSize: 12, color: Colors.grey),
+          Padding(
+            padding:  EdgeInsets.symmetric(horizontal: 8.0.w),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  "FILA Men's shorts",overflow: TextOverflow.ellipsis,
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
+                 SizedBox(height: 4.h),
+                const Text(
+                  'Aug 11, 10:40Am - Aug 20, 06:00Pm',overflow: TextOverflow.ellipsis,
+                  style: TextStyle(fontSize: 12, color: Colors.grey),
+                ),
+              ],
+            ),
           ),
         ],
       ),
