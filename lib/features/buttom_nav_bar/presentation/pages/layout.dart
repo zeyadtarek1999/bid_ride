@@ -1,6 +1,7 @@
 import 'package:bid_ride/core/utils/app_colors.dart';
 import 'package:bid_ride/features/favourite/presentation/pages/favorite_page.dart';
 import 'package:bid_ride/features/home/presentation/pages/home_page.dart';
+import 'package:bid_ride/features/profile/presentation/pages/profile_page.dart';
 import 'package:flutter/material.dart';
 
 class Layout extends StatefulWidget {
@@ -18,7 +19,7 @@ class _LayoutState extends State<Layout> {
     const FavoritePage(),
     OrdersPage(),
     CartPage(),
-    ProfilePage(),
+    const ProfilePage(),
   ];
 
   @override
@@ -99,11 +100,5 @@ class CartPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Center(child: Text('Cart Page'));
   }
-}
 
-class ProfilePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return const Center(child: Text('Profile Page'));
-  }
 }
