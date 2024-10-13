@@ -13,7 +13,7 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profile'),
+        title: const Text('Profile'),
         actions: [
           TextButton(onPressed: (){}, child: Text('Update',style: Theme.of(context).textTheme.bodySmall!.copyWith(color: AppColors.secondColor,)))
         ],

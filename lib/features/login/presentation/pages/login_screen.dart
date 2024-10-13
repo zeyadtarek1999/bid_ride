@@ -17,39 +17,41 @@ class LoginScreen extends StatelessWidget {
         },icon: const Icon(Icons.arrow_back,)),
 
       ),
-      body: Padding(
-        padding:  EdgeInsets.symmetric(horizontal: 8.0.w),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Center(
-              child: Text(
-                'Login',
-                style: Theme.of(context).textTheme.displayMedium,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding:  EdgeInsets.symmetric(horizontal: 8.0.w),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Center(
+                child: Text(
+                  'Login',
+                  style: Theme.of(context).textTheme.displayMedium,
+                ),
               ),
-            ),
-            SizedBox(height: 50.h,),
-            const Text('E-mail'),
-            SizedBox(height: 5.h,),
-            const CustomTextFormFieldWidget(
-              hint: 'Enter your email',
-
-            ),
-            SizedBox(height: 15.h,),
-            const Text('Password'),
-            SizedBox(height: 5.h,),
-            const CustomTextFormFieldWidget(
-              hint: 'Enter your password',
-              isPassword: true,
-            ),
-            SizedBox(height: 60.h,),
-            CustomMaterialButton(text: 'Login', onPressed: (){
-              Navigator.pushReplacementNamed(context, AppRoutes.homeScreenRoute);
-
-            })
-
-          ],
+              SizedBox(height: 50.h,),
+              const Text('E-mail'),
+              SizedBox(height: 5.h,),
+              const CustomTextFormFieldWidget(
+                hint: 'Enter your email',
+        
+              ),
+              SizedBox(height: 15.h,),
+              const Text('Password'),
+              SizedBox(height: 5.h,),
+              const CustomTextFormFieldWidget(
+                hint: 'Enter your password',
+                isPassword: true,
+              ),
+              SizedBox(height: 60.h,),
+              CustomMaterialButton(text: 'Login', onPressed: (){
+                Navigator.pushReplacementNamed(context, AppRoutes.homeScreenRoute);
+        
+              })
+        
+            ],
+          ),
         ),
       ),
     );
