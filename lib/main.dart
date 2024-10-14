@@ -1,11 +1,9 @@
 import 'package:bid_ride/features/splash/presentation/manager/splash_cubit.dart';
-import 'package:bloc/bloc.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'app.dart';
 import 'core/observers/bloc_observer.dart';
 import 'injection_container.dart';
@@ -29,11 +27,8 @@ void main() async {
         BlocProvider(
           create: (_) => getIt<SplashCubit>(),
         ),
-
       ],
       child: const MyApp(),
     ),
-
-
   ));
 }
