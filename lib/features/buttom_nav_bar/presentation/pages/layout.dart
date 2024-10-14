@@ -1,4 +1,5 @@
 import 'package:bid_ride/core/utils/app_colors.dart';
+import 'package:bid_ride/features/add_bid/presentation/pages/add_bid_screen.dart';
 import 'package:bid_ride/features/favourite/presentation/pages/favorite_page.dart';
 import 'package:bid_ride/features/home/presentation/pages/home_page.dart';
 import 'package:bid_ride/features/profile/presentation/pages/profile_page.dart';
@@ -18,7 +19,7 @@ class _LayoutState extends State<Layout> {
   final List<Widget> _pages = [
     const HomePage(),
     const FavoritePage(),
-    OrdersPage(),
+    const AddBidScreen(),
     const BidsPage(),
     const ProfilePage(),
   ];
@@ -84,15 +85,4 @@ class _LayoutState extends State<Layout> {
       label: label,
     );
   }
-}
-
-// Dummy pages for each tab
-
-
-class OrdersPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return const Center(child: Text('Orders Page'));
-  }
-
 }
