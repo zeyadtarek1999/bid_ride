@@ -1,3 +1,4 @@
+import 'package:bid_ride/config/routes/app_routes.dart';
 import 'package:bid_ride/features/home/presentation/widgets/category.dart';
 import 'package:bid_ride/features/home/presentation/widgets/posts.dart';
 import 'package:bid_ride/features/home/presentation/widgets/search.dart';
@@ -31,7 +32,10 @@ class HomePage extends StatelessWidget {
               ),
               itemCount: 10,
               itemBuilder: (BuildContext context, int index) {
-                return const Posts();
+                return InkWell(child: const Posts(),onTap: (){
+                  Navigator.pushReplacementNamed(context, AppRoutes.postDetailsScreenRoute);
+
+                },);
               },
             ),
           ],

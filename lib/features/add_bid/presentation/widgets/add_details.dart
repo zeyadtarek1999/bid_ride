@@ -7,7 +7,6 @@ class AddDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Car-specific fields
     final List<String> carConditions = [
       'New',
       'Used - Like New',
@@ -49,7 +48,6 @@ class AddDetails extends StatelessWidget {
           hint: 'Mileage (e.g., 150,000 km)',
         ),
         SizedBox(height: 20.h),
-        // Dropdown for Condition
         DropdownButtonFormField<String>(
           decoration: const InputDecoration(
             labelText: 'Condition',
@@ -72,7 +70,6 @@ class AddDetails extends StatelessWidget {
           isExpanded: true,
         ),
         SizedBox(height: 20.h),
-        // Dropdown for Fuel Type
         DropdownButtonFormField<String>(
           decoration: const InputDecoration(
             labelText: 'Fuel Type',

@@ -25,6 +25,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/car.png
   AssetGenImage get car => const AssetGenImage('assets/images/car.png');
 
+  /// File path: assets/images/car2.png
+  AssetGenImage get car2 => const AssetGenImage('assets/images/car2.png');
+
   /// File path: assets/images/splash_image.png
   AssetGenImage get splashImage =>
       const AssetGenImage('assets/images/splash_image.png');
@@ -37,7 +40,8 @@ class $AssetsImagesGen {
       const AssetGenImage('assets/images/welcome_screen.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [car, splashImage, user, welcomeScreen];
+  List<AssetGenImage> get values =>
+      [car, car2, splashImage, user, welcomeScreen];
 }
 
 class $AssetsLanguagesGen {

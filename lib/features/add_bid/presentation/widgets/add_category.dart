@@ -6,7 +6,6 @@ class AddCategory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Car-specific categories
     final List<String> carCategories = [
       'Sedan',
       'SUV',
@@ -41,7 +40,7 @@ class AddCategory extends StatelessWidget {
               child: Text(
                 category,
                 overflow: TextOverflow.ellipsis,
-                maxLines: 1, // Ensure the text stays in one line
+                maxLines: 1,
               ),
             );
           }).toList(),
