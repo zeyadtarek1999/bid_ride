@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(icon: const Icon(Icons.line_weight),onPressed: (){},),
-        title: const Text('AutoBidCar'),
+        title: const Text('Home Page'),
         actions: [IconButton(onPressed: (){}, icon: const Icon(Icons.notifications))],
       ),
       body: SingleChildScrollView(

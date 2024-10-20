@@ -1,1 +1,55 @@
-{}
+{
+  "Login": "تسجيل الدخول",
+  "Register": "تسجيل",
+  "First Name": "الاسم الأول",
+  "Last Name": "الاسم الأخير",
+  "Email": "البريد الإلكتروني",
+  "Enter your email": "أدخل بريدك الإلكتروني",
+  "Phone Number": "رقم الهاتف",
+  "Enter your phone": "أدخل رقم هاتفك",
+  "Password": "كلمة المرور",
+  "Confirm Password": "تأكيد كلمة المرور",
+  "Create Account": "إنشاء حساب",
+  "Enter your password": "أدخل كلمة المرور الخاصة بك",
+  "Home Page": "الصفحة الرئيسية",
+  "Search for": "ابحث عن",
+  "Top Deals": "أفضل العروض",
+  "See all": "عرض الكل",
+  "View": "عرض",
+  "Favourites": "المفضلة",
+  "Tittle": "العنوان",
+  "Description": "الوصف",
+  "Starts": "يبدأ",
+  "Ends": "ينتهي",
+  "Submit Ad": "إرسال الإعلان",
+  "Ad Images": "صور الإعلان",
+  "Prepare images before uploading. Upload images larger than 750px x 450px. Max number of images is 5. Max image size is 134MB": "قم بإعداد الصور قبل التحميل. حمّل صورًا أكبر من 750px x 450px. الحد الأقصى لعدد الصور هو 5. الحد الأقصى لحجم الصورة هو 134 ميجابايت",
+  "Select Car Category": "اختر فئة السيارة",
+  "Category": "الفئة",
+  "Car Details": "تفاصيل السيارة",
+  "Car Make": "ماركة السيارة",
+  "Car Model": "طراز السيارة",
+  "Year of Manufacture": "سنة الصنع",
+  "Mileage": "عدد الأميال",
+  "Condition": "الحالة",
+  "Fuel Type": "نوع الوقود",
+  "Price": "السعر",
+  "Ad Location & Contact": "موقع الإعلان وتفاصيل الاتصال",
+  "Use address set in profile section": "استخدم العنوان المحدد في قسم الملف الشخصي",
+  "I agree to terms & conditions": "أوافق على الشروط والأحكام",
+  "Cancel": "إلغاء",
+  "Submit": "إرسال",
+  "My Bids": "مزايداتي",
+  "Live": "مباشر",
+  "Profile": "الملف الشخصي",
+  "Update": "تحديث",
+  "Address": "العنوان",
+  "Enter your address": "أدخل عنوانك",
+  "Logout": "تسجيل الخروج"
+
+
+
+
+
+
+}
