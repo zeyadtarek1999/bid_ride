@@ -24,7 +24,7 @@ class Search extends StatelessWidget {
                   Icon(Icons.search, color: Colors.grey.shade500),
                    SizedBox(width: 10.w),
                   const Text(
-                    "Search for Honda Pilot 7-Passenger",
+                    "Search for",
                     style: TextStyle(
                       color: Colors.grey,
                       fontSize: 12,
