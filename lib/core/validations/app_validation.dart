@@ -12,16 +12,25 @@ class AppValidator {
     }
     return null;
   }
-
   static String? passwordValidation(String? value) {
+    final symbolRegex = RegExp(r'[!@#\$&*~]');
+    final numberRegex = RegExp(r'[0-9]');
+
     if (value == null || value.isEmpty) {
       return 'LocaleKeys.enterYourPassword.tr()';
     }
-    if (value.length < 6) {
-      return 'LocaleKeys.passwordAtLeast6.tr()';
+    if (value.length < 8) {
+      return 'LocaleKeys.passwordAtLeast8.tr()';
+    }
+    if (!numberRegex.hasMatch(value)) {
+      return 'LocaleKeys.passwordMustContainNumber.tr()';
+    }
+    if (!symbolRegex.hasMatch(value)) {
+      return 'LocaleKeys.passwordMustContainSymbol.tr()';
     }
     return null;
   }
+
 
   static String? phoneValidation(String? value) {
     if (value == null || value.isEmpty) {
@@ -33,7 +42,7 @@ class AppValidator {
     return null;
   }
 
-  static String? nameValidation(String? name) {
+  static String? nameValidation(String? name , ) {
     if (name == null || name.isEmpty) {
       return 'LocaleKeys.nameRequired.tr()';
     }

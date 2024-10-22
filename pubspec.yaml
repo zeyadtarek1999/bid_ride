@@ -29,7 +29,7 @@ dependencies:
   font_awesome_flutter: ^10.4.0
   custom_radio_grouped_button: ^2.2.1
   image_picker: ^0.8.7+3
-  carousel_slider: ^4.2.1
+  carousel_slider: ^5.0.0
 
 
 

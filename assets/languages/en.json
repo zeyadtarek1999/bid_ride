@@ -1,10 +1,11 @@
 {
   "Login": "Login",
   "Register": "Register",
-  "First Name": "First Name",
+  "First_Name": "First Name",
   "LastName": "Last Name",
   "Email": "Email",
-  "Enter your email": "Enter your email",
+
+  "Enter_your_email": "Enter your email",
   "Phone Number": "Phone Number",
   "Enter your phone": "Enter your phone",
   "Password": "Password",

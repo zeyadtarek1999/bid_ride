@@ -1,3 +1,4 @@
+import 'package:bid_ride/features/registration/presentation/cubit/register_cubit.dart';
 import 'package:bid_ride/features/splash/presentation/manager/splash_cubit.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +27,8 @@ void main() async {
       providers: [
         BlocProvider(
           create: (_) => getIt<SplashCubit>(),
+        ), BlocProvider(
+          create: (_) => getIt<RegisterCubit>(),
         ),
       ],
       child: const MyApp(),

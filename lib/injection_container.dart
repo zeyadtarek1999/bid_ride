@@ -1,3 +1,9 @@
+import 'package:bid_ride/features/registration/data/data_sources/register_local_data_source.dart';
+import 'package:bid_ride/features/registration/data/repositories/register_repository_imp.dart';
+import 'package:bid_ride/features/registration/domain/repositories/register_repository.dart';
+import 'package:bid_ride/features/registration/domain/use_cases/get_user_info.dart';
+import 'package:bid_ride/features/registration/domain/use_cases/register_uc.dart';
+import 'package:bid_ride/features/registration/presentation/cubit/register_cubit.dart';
 import 'package:bid_ride/features/splash/presentation/manager/splash_cubit.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
@@ -27,18 +33,27 @@ Future<void> getItInit() async {
   /// Blocs
   getIt.registerFactory<CatFactCubit>(() => CatFactCubit(featureUc: getIt()));
   getIt.registerFactory(() => SplashCubit( ));
+  getIt.registerFactory(() => RegisterCubit(signUpUseCase: getIt() ));
 
   /// Use cases
   getIt
       .registerLazySingleton<FirstFeatureUc>(() => FirstFeatureUc(firstFeatureRepository: getIt()));
+getIt
+      .registerLazySingleton<SignUpUseCase>(() => SignUpUseCaseImpl(  getIt()));
+getIt
+      .registerLazySingleton (() => GetUserInfoUseCase(  getIt()));
 
   /// Repository
   getIt.registerLazySingleton<FirstFeatureRepository>(() =>
       FirstFeatureRepositoryImpl(networkInfo: getIt(), firstFeatureRemoteDataSource: getIt()));
+ getIt.registerLazySingleton<SignUpRepository>(() =>
+     SignUpRepositoryImpl(localDataSource: getIt() ));
 
   /// Data Sources
   getIt.registerLazySingleton<FirstFeatureRemoteDataSource>(
       () => FirstFeatureRemoteDataSourceImpl(client: getIt()));
+getIt.registerLazySingleton<SignUpLocalDataSource>(
+      () => SignUpLocalDataSourceImpl(  getIt()));
 
   /// Core
   getIt.registerLazySingleton<NetworkInfo>(() => NetworkInfoImpl(connectionChecker: getIt()));
