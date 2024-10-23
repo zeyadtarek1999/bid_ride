@@ -1,0 +1,63 @@
+// DO NOT EDIT. This is code generated via package:easy_localization/generate.dart
+
+abstract class  LocaleKeys {
+  static const Login = 'Login';
+  static const Register = 'Register';
+  static const First_Name = 'First_Name';
+  static const Last_Name = 'Last_Name';
+  static const Email = 'Email';
+  static const Enter_your_email = 'Enter_your_email';
+  static const Phone_Number = 'Phone_Number';
+  static const Enter_your_phone = 'Enter_your_phone';
+  static const Password = 'Password';
+  static const Confirm_Password = 'Confirm_Password';
+  static const Create_Account = 'Create_Account';
+  static const Enter_your_password = 'Enter_your_password';
+  static const Home_Page = 'Home_Page';
+  static const Search_for = 'Search_for';
+  static const Top_Deals = 'Top_Deals';
+  static const See_all = 'See_all';
+  static const View = 'View';
+  static const Favourites = 'Favourites';
+  static const Title = 'Title';
+  static const Description = 'Description';
+  static const Starts = 'Starts';
+  static const Ends = 'Ends';
+  static const Submit_Ad = 'Submit_Ad';
+  static const Ad_Images = 'Ad_Images';
+  static const Prepare_images_before_uploading_Upload_images_larger_than_750px_x_450px_Max_number_of_images_is_5_Max_image_size_is_134MB = 'Prepare_images_before_uploading_Upload_images_larger_than_750px_x_450px_Max_number_of_images_is_5_Max_image_size_is_134MB';
+  static const Select_Car_Category = 'Select_Car_Category';
+  static const Category = 'Category';
+  static const Car_Details = 'Car_Details';
+  static const Car_Make = 'Car_Make';
+  static const Car_Model = 'Car_Model';
+  static const Year_of_Manufacture = 'Year_of_Manufacture';
+  static const Mileage = 'Mileage';
+  static const Condition = 'Condition';
+  static const Fuel_Type = 'Fuel_Type';
+  static const Price = 'Price';
+  static const Ad_Location_and_Contact = 'Ad_Location_and_Contact';
+  static const Use_address_set_in_profile_section = 'Use_address_set_in_profile_section';
+  static const I_agree_to_terms_and_conditions = 'I_agree_to_terms_and_conditions';
+  static const Cancel = 'Cancel';
+  static const Submit = 'Submit';
+  static const My_Bids = 'My_Bids';
+  static const Live = 'Live';
+  static const Profile = 'Profile';
+  static const Update = 'Update';
+  static const Address = 'Address';
+  static const Enter_your_address = 'Enter_your_address';
+  static const Logout = 'Logout';
+  static const Please_enter_your_email = 'Please_enter_your_email';
+  static const Please_enter_your_email_in_the_right_format = 'Please_enter_your_email_in_the_right_format';
+  static const Please_enter_your_password = 'Please_enter_your_password';
+  static const Password_must_be_at_least_8_characters = 'Password_must_be_at_least_8_characters';
+  static const Password_must_contain_numbers = 'Password_must_contain_numbers';
+  static const Password_must_contain_symbols = 'Password_must_contain_symbols';
+  static const Password_cannot_be_empty = 'Password_cannot_be_empty';
+  static const Password_donot_match = 'Password_donot_match';
+  static const Please_enter_your_phone_number = 'Please_enter_your_phone_number';
+  static const Enter_your_first_name = 'Enter_your_first_name';
+  static const Enter_your_last_name = 'Enter_your_last_name';
+
+}

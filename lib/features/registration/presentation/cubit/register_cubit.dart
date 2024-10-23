@@ -11,11 +11,7 @@ part 'register_state.dart';
 
 class RegisterCubit extends Cubit<RegisterState> {
   final  SignUpUseCase signUpUseCase ;
-  RegisterCubit({required this.signUpUseCase}
-
-
-
-      ) : super(RegisterInitial());
+  RegisterCubit({required this.signUpUseCase}) : super(RegisterInitial());
 
   TextEditingController firstName = TextEditingController();
   TextEditingController lastName = TextEditingController();
@@ -30,19 +26,16 @@ class RegisterCubit extends Cubit<RegisterState> {
 
     final result = await signUpUseCase.signUp(user);
 
-    result.fold(
-          (failure) {
+    result.fold((failure) {
             getIt<AlertService>().showAlert(
               context: context,
               title:' LocaleKeys.incomplete_form.tr()',
               subtitle: 'LocaleKeys.please_fill_out.tr()',
               status: AlertStatus.error,
             );
-
-        emit(SignUpError(failure.massage));
-      },
-          (_) {
-            getIt<AlertService>().showAlert(
+            emit(SignUpError(failure.massage));
+      }, (_) {
+      getIt<AlertService>().showAlert(
               context: context,
               title:' LocaleKeys.incomplete_form.tr()',
               subtitle: 'LocaleKeys.please_fill_out.tr()',
