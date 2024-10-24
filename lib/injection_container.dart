@@ -8,11 +8,7 @@ import 'package:bid_ride/features/splash/presentation/manager/splash_cubit.dart'
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:bid_ride/core/services/permission_service.dart';
-import 'package:bid_ride/features/first_feature/data/data_sources/first_feature_remote_data_source.dart';
-import 'package:bid_ride/features/first_feature/data/repositories/first_feature_repo_impl.dart';
-import 'package:bid_ride/features/first_feature/domain/repositories/first_feature_repo.dart';
-import 'package:bid_ride/features/first_feature/domain/use_cases/first_feature_uc.dart';
-import 'package:bid_ride/features/first_feature/presentation/manager/cat_fact_cubit.dart';
+
 import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
@@ -31,29 +27,22 @@ Future<void> getItInit() async {
   //! Features
 
   /// Blocs
-  getIt.registerFactory<CatFactCubit>(() => CatFactCubit(featureUc: getIt()));
   getIt.registerFactory(() => SplashCubit( ));
   getIt.registerFactory(() => RegisterCubit(signUpUseCase: getIt() ));
 
   /// Use cases
-  getIt
-      .registerLazySingleton<FirstFeatureUc>(() => FirstFeatureUc(firstFeatureRepository: getIt()));
-getIt
-      .registerLazySingleton<SignUpUseCase>(() => SignUpUseCaseImpl(  getIt()));
-getIt
-      .registerLazySingleton (() => GetUserInfoUseCase(  getIt()));
+
+getIt.registerLazySingleton<SignUpUseCase>(() => SignUpUseCaseImpl(  getIt()));
+getIt.registerLazySingleton (() => GetUserInfoUseCase(  getIt()));
 
   /// Repository
-  getIt.registerLazySingleton<FirstFeatureRepository>(() =>
-      FirstFeatureRepositoryImpl(networkInfo: getIt(), firstFeatureRemoteDataSource: getIt()));
+
  getIt.registerLazySingleton<SignUpRepository>(() =>
      SignUpRepositoryImpl(localDataSource: getIt() ));
 
   /// Data Sources
-  getIt.registerLazySingleton<FirstFeatureRemoteDataSource>(
-      () => FirstFeatureRemoteDataSourceImpl(client: getIt()));
-getIt.registerLazySingleton<SignUpLocalDataSource>(
-      () => SignUpLocalDataSourceImpl(  getIt()));
+
+getIt.registerLazySingleton<SignUpLocalDataSource>(() => SignUpLocalDataSourceImpl(  getIt()));
 
   /// Core
   getIt.registerLazySingleton<NetworkInfo>(() => NetworkInfoImpl(connectionChecker: getIt()));
