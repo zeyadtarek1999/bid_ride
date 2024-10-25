@@ -1,3 +1,4 @@
+import 'package:bid_ride/config/routes/app_routes.dart';
 import 'package:bid_ride/core/enum/alert_enum.dart';
 import 'package:bid_ride/core/services/alert_service.dart';
 import 'package:bid_ride/features/registration/domain/entities/register_entity.dart';
@@ -35,6 +36,7 @@ class RegisterCubit extends Cubit<RegisterState> {
             );
             emit(SignUpError(failure.massage));
       }, (_) {
+      Navigator.pushReplacementNamed(context, AppRoutes.homeScreenRoute);
       getIt<AlertService>().showAlert(
               context: context,
               title:' LocaleKeys.incomplete_form.tr()',

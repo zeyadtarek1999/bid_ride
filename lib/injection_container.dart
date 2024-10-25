@@ -1,3 +1,4 @@
+import 'package:bid_ride/core/helpers/secure_cache_helper.dart';
 import 'package:bid_ride/features/registration/data/data_sources/register_local_data_source.dart';
 import 'package:bid_ride/features/registration/data/repositories/register_repository_imp.dart';
 import 'package:bid_ride/features/registration/domain/repositories/register_repository.dart';
@@ -64,6 +65,7 @@ getIt.registerLazySingleton<SignUpLocalDataSource>(() => SignUpLocalDataSourceIm
   getIt.registerLazySingleton(() => UrlLauncherService());
   getIt.registerLazySingleton(() => PermissionService());
   getIt.registerLazySingleton(() => AlertService());
+  getIt.registerLazySingleton(() => SecureCacheHelper());
   getIt.registerLazySingleton(() => PrettyDioLogger(
         request: true,
         requestHeader: true,
